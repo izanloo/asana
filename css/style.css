@@ -1,0 +1,140 @@
+@import url(normalize.css);
+body {
+  background-color: #D0D0D0; }
+
+.setion1 .s1-div1 {
+  width: 100%;
+  height: 80vh; }
+  .setion1 .s1-div1 .nav-bar {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    background-color: #D0D0D0;
+    position: fixed;
+    top: 0;
+    width: 100%; }
+    .setion1 .s1-div1 .nav-bar a {
+      margin-left: 10px;
+      padding-right: 20px;
+      padding-top: 20px; }
+      .setion1 .s1-div1 .nav-bar a:hover {
+        cursor: pointer; }
+      .setion1 .s1-div1 .nav-bar a ul {
+        list-style-type: none;
+        display: none;
+        position: absolute;
+        z-index: 999; }
+    .setion1 .s1-div1 .nav-bar .btn-try1 {
+      float: right;
+      border-radius: 5px;
+      border-color: #9370d8;
+      padding: 5px;
+      margin-top: 15px;
+      color: #9370d8;
+      margin-right: 5px; }
+      .setion1 .s1-div1 .nav-bar .btn-try1:hover {
+        box-shadow: 2px 2px 2px 2px #9370d8;
+        cursor: pointer; }
+      .setion1 .s1-div1 .nav-bar .btn-try1:focus {
+        outline: none; }
+  .setion1 .s1-div1 .matn {
+    text-align: center;
+    margin-top: 100px; }
+  .setion1 .s1-div1 form {
+    text-align: center; }
+    .setion1 .s1-div1 form .sech-company {
+      width: 300px;
+      height: 30px;
+      padding: 0 5px;
+      border-radius: 3px; }
+    .setion1 .s1-div1 form .btn-try2 {
+      height: 35px;
+      margin-left: 15px;
+      background-color: #9370d8;
+      border-color: #9370d8;
+      color: #FFF;
+      border-radius: 5px;
+      cursor: pointer; }
+      .setion1 .s1-div1 form .btn-try2:hover {
+        background-color: #8270d8; }
+      .setion1 .s1-div1 form .btn-try2:focus {
+        outline: none; }
+  .setion1 .s1-div1 #logo {
+    margin-right: auto;
+    padding-top: 5px;
+    object-fit: contain; }
+.setion1 .banafsh {
+  width: 100%;
+  min-height: 30%;
+  background-color: #9370d8;
+  display: flex;
+  justify-content: center; }
+  .setion1 .banafsh .matn2 {
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: justify;
+    min-height: auto;
+    direction: ltr;
+    color: white; }
+    .setion1 .banafsh .matn2 .text1, .setion1 .banafsh .matn2 .text2, .setion1 .banafsh .matn2 .text3 {
+      margin-top: 120px;
+      max-width: 160px; }
+  .setion1 .banafsh .chear {
+    position: absolute;
+    float: left;
+    margin-top: -10px;
+    margin-left: 500px; }
+.setion1 #img1 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%; }
+
+.setion2 {
+  width: 100%;
+  height: 100vh; }
+  .setion2 .s2-div1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    text-align: justify;
+    direction: ltr;
+    background-color: white;
+    height: 50vh; }
+    .setion2 .s2-div1 .s2-matn {
+      margin-top: 40px;
+      width: 260px;
+      min-height: auto; }
+    .setion2 .s2-div1 .s2-img {
+      margin-top: 40px; }
+      .setion2 .s2-div1 .s2-img img {
+        width: 300px;
+        margin-left: 20px; }
+  .setion2 .s2-div2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    direction: ltr;
+    height: 50vh; }
+    .setion2 .s2-div2 .s2-img {
+      margin-top: 40px; }
+      .setion2 .s2-div2 .s2-img img {
+        width: 300px;
+        margin-left: 20px; }
+    .setion2 .s2-div2 .s2-matn {
+      margin-top: 80px;
+      margin-left: 50px;
+      width: 260px;
+      min-height: auto; }
+      .setion2 .s2-div2 .s2-matn .bb {
+        height: 100px;
+        width: 100px;
+        color: red; }
+      .setion2 .s2-div2 .s2-matn img {
+        width: 300px; }
+
+/*# sourceMappingURL=style.css.map */
