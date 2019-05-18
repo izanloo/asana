@@ -5,6 +5,14 @@ $colors:(
         colorr:#FFF,
         btn-bg:#8270d8
 );
+$max-widthh:1100px;
+$media-width:768px;
+//---------<@mixin>-------------
+@mixin medias($max-widthh) {
+  @media only screen and (max-width:#{$max-widthh}) {
+    @content;
+  }
+}
 
 // ----------<function>----------
 @function color($newcolor){
@@ -13,69 +21,110 @@ $colors:(
 
 //----------<import>-------------
 @import "normalize.css";
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
 
 
 body{
   background-color:color(bg);
+  font-family: 'Lato', sans-serif;
+
+
 
 
 }
-//--------<setion1>--------------
+.nav-bar {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  background-color: color(bg);
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  width: 100%;
+  @include medias($max-widthh){
+    align-items: center;
+    dispaly:flex;
+    flex-direction:column;
+
+  }
+
+  &:hover{
+    box-shadow: 2px 2px 2px 2px gray;
+
+  }
+
+  a {
+    margin-left:10px;
+    padding-right: 20px;
+    padding-top: 20px;
+    &:hover {
+      cursor: pointer;
+
+    }
+
+  }
+  .btn-try1 {
+    float: right;
+    border-radius: 5px;
+    border-color: color(btn);
+    padding:5px;
+    margin-top: 15px;
+    color: color(btn);
+    margin-right: 5px;
+
+    &:hover {
+      box-shadow: 2px 2px 2px 2px color(btn);
+      cursor: pointer;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+
+  #logo {
+    margin-right:auto;
+    padding-top: 5px;
+    object-fit:contain;
+    @include medias($max-widthh){
+      margin-right: 0px;
+       align-self: center;
+
+    }
+  }
+}
+
+
+//-----------<setion1>------------
 .setion1 {
   .s1-div1 {
     width: 100%;
-    height: 80vh;
+    height:100vh;
 
-    .nav-bar {
+
+
+    .serch1{
+      width:100%;
+      height:40vh;
       display: flex;
-      flex-direction: row-reverse;
-      justify-content: flex-start;
-      background-color: color(bg);
-      position: fixed;
-      top: 0;
-      width: 100%;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
 
-      a {
-        margin-left:10px;
-        padding-right: 20px;
-        padding-top: 20px;
-        &:hover {
-          cursor: pointer;
-
-        }
-        ul{
-        list-style-type:none ;
-        display: none;
-          position:absolute;
-          z-index:999;
-        }
+      @include medias($max-widthh){
+        dispaly:flex;
+        flex-direction:column;
+        flex-wrap: wrap;
+        text-align: center;
+        margin-top:300px;
       }
-      .btn-try1 {
-        float: right;
-        border-radius: 5px;
-        border-color: color(btn);
-        padding:5px;
-        margin-top: 15px;
-        color: color(btn);
-        margin-right: 5px;
 
-        &:hover {
-          box-shadow: 2px 2px 2px 2px color(btn);
-          cursor: pointer;
-        }
-        &:focus {
-          outline: none;
-        }
+      @include medias($max-widthh){
+      font-size:13px;
       }
     }
 
 
-    .matn {
-      text-align: center;
-      margin-top:100px;
-    }
-    form {
-      text-align: center;
 
       .sech-company {
         width: 300px;
@@ -99,67 +148,198 @@ body{
         &:focus {
           outline: none;
         }
+        @include medias($max-widthh){
+        margin-top: 10px;
 
+        }
       }
-    }
 
 
-  #logo {
-    margin-right:auto;
-    padding-top: 5px;
-    object-fit:contain;
-  }
+
 
   }
-    .banafsh{
-      width: 100%;
-      min-height:30%;
-      background-color: #9370d8;
-      display: flex;
-      justify-content:center;
+  .banafsh{
 
-
-      .matn2 {
+    width: 100%;
+    min-height:30%;
+    background-color: #9370d8;
+    display: flex;
+    justify-content:center;
+    .matn2 {
       width: 600px;
       //margin-top:0px;
       display: flex;
+      margin-top: 20px;
       flex-wrap: wrap;
       justify-content:space-between;
       text-align: justify;
       min-height: auto;
       direction:ltr;
       color: white;
+      line-height: 25px;
+      @include medias($max-widthh){
+        display: flex;
+        flex: 1;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-direction: column;
+        align-content:center;
+
+      }
+
       .text1,.text2,.text3{
-          margin-top:120px;
-          max-width:160px;
-        }
+        margin-top:120px;
+        max-width:160px;
+
+      }
 
     }
 
-      .chear{
-        position: absolute;
-        //object-fit: contain;
-        float: left;
-        margin-top:-10px;
-        margin-left:500px;
+    .chear{
+      position: absolute;
+      position: absolute;
+      right:50px;
+      top:560px;
+      @include medias($max-widthh){
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        top:710px;
+
+
       }
     }
-    #img1 {
-
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: 70%;
-    }
+  }
+  #img1 {
+    width: 70%;
+    position: absolute;
+    transform: translateX(-50%);
+    left:50%;
+    z-index:1;
+    bottom:1;
+  }
 
 
 }
 //-----------<setion2>------------
 
 .setion2{
-  width:100%;
-  height:100vh;
+
+  align-content: center;
+  @include medias($max-widthh){
+
+    dispaly:flex;
+    flex-direction:column;
+
+
+  }
   .s2-div1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: justify;
+    direction:ltr;
+    background-color: white;
+    height:50vh;
+    align-items: center;
+      @include medias($max-widthh){
+        dispaly:flex;
+        flex: 1;
+        flex-direction:column;
+        text-align: center;
+        justify-content: center;
+      }
+    .s2-matn{
+
+      //margin-top:40px;
+      width:260px;
+      min-height: auto;
+      line-height:25px;
+
+
+    }
+    .s2-img{
+      //margin-top:40px;
+
+      //object-fit:contain;
+      img{
+        width:300px;
+        margin-left: 20px;
+      }
+    }
+  }
+
+  .s2-div2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: justify;
+    direction:ltr;
+    height:auto;
+    @include medias($max-widthh){
+      dispaly:flex;
+      flex: 1;
+      flex-direction:column;
+      text-align: center;
+      justify-content: center;
+    }
+    .bb{
+      font-size:100px;
+      color: red;
+      background-color: white;
+      margin-top:16px;
+      height:195px;
+
+    }
+    .s2-matn2{
+      width:260px;
+      height:195px;
+      //margin-top:40px;
+      background-color: white;
+      align-content: center;
+
+
+      .txt{
+        margin-top:20px;
+
+      }
+    }
+    .s2-img2{
+
+      //object-fit:contain;
+      img{
+        width:300px;
+        margin-left: 20px;
+      }
+    }
+  }
+
+  .button{
+    //width:520px;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-self: center;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    //display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    @include medias($max-widthh){
+      dispaly:flex;
+      flex: 1;
+      flex-direction:column;
+      align-items: center;
+      justify-content: center;
+      width:220px;
+      margin-left:0px;
+    }
+
+  }
+  .s2-div3{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -168,32 +348,91 @@ body{
     direction:ltr;
     background-color: white;
     height:50vh;
+    align-items: center;
+    @include medias($max-widthh){
+      dispaly:flex;
+      flex: 1;
+      flex-direction:column;
+      justify-content: center;
+      padding-top: 50px;
+    }
     .s2-matn{
-      margin-top:40px;
+      //margin-top:40px;
       width:260px;
       min-height: auto;
+      line-height:25px;
+      @include medias($max-widthh){
+
+        dispaly:flex;
+        flex-direction:column;
+
+
+      }
+
+      a{
+        text-decoration: none;
+      }
 
     }
     .s2-img{
-      margin-top:40px;
+      //margin-top:40px;
 
       //object-fit:contain;
       img{
         width:300px;
         margin-left: 20px;
       }
-      }}
+    }
+  }
 
 
-  .s2-div2{
+}
+
+
+//-----------<setion3>------------
+
+.setion3{
+  .s3-div{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-content: center;
+    text-align: justify;
     direction:ltr;
     height:50vh;
-    .s2-img{
-      margin-top:40px;
+    background-color: #9370d8;
+    align-items: center;
+    @include medias($max-widthh){
+      dispaly:flex;
+      flex: 1;
+      flex-direction:column;
+      text-align: center;
+      justify-content: center;
+      height: 60vh;
+
+    }
+
+
+    .s2-matn2{
+      width:260px;
+      height:195px;
+      margin-left: 20px;
+      line-height: 25px;
+        @include medias($max-widthh){
+          dispaly:flex;
+          flex: 1;
+          flex-direction:column;
+          justify-content: center;
+          margin-left: 0px;
+          width: 100%;
+        }
+
+      .txt{
+        //margin-top:20px;
+
+      }
+    }
+    .s2-img2{
 
       //object-fit:contain;
       img{
@@ -201,25 +440,110 @@ body{
         margin-left: 20px;
       }
     }
-    .s2-matn{
-      margin-top:80px;
-      margin-left:50px;
-      width:260px;
-      min-height: auto;
-      .bb{
-        height: 100px;
-        width: 100px;
-        color: red;
-      }
-      img{
-        width:300px;
+  }
 
-      }
+  .s3-div2{
+    width: 100%;
+
+    background-color: white;
+    text-align: center;
+    height:50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include medias($max-widthh){
+      dispaly:flex;
+      flex: 1;
+      flex-direction:column;
+      text-align: center;
+      justify-content: center;
+      height:50vh;
     }
+
+    .c {
+      text-align: center;
+
+      .sech {
+        width: 300px;
+        height: 30px;
+        padding: 0 5px;
+        border-radius: 5px;
+
+      }
+
+      .btn-try2 {
+        height: 35px;
+        margin-left: 15px;
+        background-color: color(btn);
+        border-color: color(btn);
+        color: color(colorr);
+        border-radius: 5px;
+        cursor: pointer;
+        @include medias($max-widthh){
+        margin-top: 25px;
+        }
+        &:hover {
+          background-color: color(btn-bg);
+        }
+
+        &:focus {
+          outline: none;
+        }
+
+      }
+
+    }
+
+    .txt{
+      color: gray;
+    }
+  }}
+
+.footerr {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  @include medias($max-widthh){
+    height: 250vh;
+
+  }
+
+
+  .footerr1 {
+    width: 80%;
+    color: #D0D0D0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: justify;
+    min-height: auto;
+    direction: ltr;
+    color: white;
+
+    @include medias($max-widthh){
+      align-items: center;
+      dispaly:flex;
+      flex-direction:column;
+
+
+    }
+
+    a {
+      text-decoration: none;
+      display: block;
+      color: gray;
+
+
+    }
+  }
 }
-
-
+.f{
+  margin-top: 0px;
+  height:50px;
+  background-color: gray;
 }
-
-
 
