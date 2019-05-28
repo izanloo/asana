@@ -5,11 +5,28 @@ $colors:(
         colorr:#FFF,
         btn-bg:#8270d8
 );
-$max-widthh:1100px;
+$max-widthh:835px;
 $media-width:768px;
+$max-widthhh:411px;
+$max-widths:320px;
 //---------<@mixin>-------------
 @mixin medias($max-widthh) {
   @media only screen and (max-width:#{$max-widthh}) {
+    @content;
+  }
+}
+@mixin mediass($max-width) {
+  @media only screen and (max-width:#{$max-width}) {
+    @content;
+  }
+}
+@mixin mediasss($max-widthhh) {
+  @media only screen and (max-width:#{$max-widthhh}) {
+    @content;
+  }
+}
+@mixin mediaserch($max-widths) {
+  @media only screen and (max-width:#{$max-widths}) {
     @content;
   }
 }
@@ -34,12 +51,15 @@ body{
 
 }
 .nav-bar {
+  @include  mediasss($max-widthhh){
+    display: none;
+  }
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-start;
   background-color: color(bg);
   position: fixed;
-  z-index: 999;
+  z-index: 990;
   top: 0;
   width: 100%;
   @include medias($max-widthh){
@@ -88,7 +108,7 @@ body{
     object-fit:contain;
     @include medias($max-widthh){
       margin-right: 0px;
-       align-self: center;
+      align-self: center;
 
     }
   }
@@ -102,14 +122,21 @@ body{
     height:100vh;
 
 
+    @include mediasss($max-widthhh){
+      margin-top:-289px;
+    }
 
     .serch1{
+      @include mediaserch($max-widths){
+        padding-top:30px;
+      }
       width:100%;
       height:40vh;
       display: flex;
       justify-content: center;
       flex-direction: column;
       align-items: center;
+
 
       @include medias($max-widthh){
         dispaly:flex;
@@ -120,39 +147,40 @@ body{
       }
 
       @include medias($max-widthh){
-      font-size:13px;
+        font-size:13px;
       }
+
     }
 
 
 
-      .sech-company {
-        width: 300px;
-        height: 30px;
-        padding: 0 5px;
-        border-radius: 3px;
+    .sech-company {
+      width: 300px;
+      height: 30px;
+      padding: 0 5px;
+      border-radius: 3px;
 
+    }
+    .btn-try2 {
+      height: 35px;
+      margin-left: 15px;
+      background-color: color(btn);
+      border-color: color(btn);
+      color: color(colorr);
+      border-radius: 5px;
+      cursor: pointer;
+      &:hover {
+        background-color: color(btn-bg);
       }
-      .btn-try2 {
-        height: 35px;
-        margin-left: 15px;
-        background-color: color(btn);
-        border-color: color(btn);
-        color: color(colorr);
-        border-radius: 5px;
-        cursor: pointer;
-        &:hover {
-          background-color: color(btn-bg);
-        }
 
-        &:focus {
-          outline: none;
-        }
-        @include medias($max-widthh){
+      &:focus {
+        outline: none;
+      }
+      @include medias($max-widthh){
         margin-top: 10px;
 
-        }
       }
+    }
 
 
 
@@ -200,13 +228,38 @@ body{
       position: absolute;
       right:50px;
       top:560px;
+      //@include medias($media-width){
+      //  display: flex;
+      //  justify-content: center;
+      //  align-content: center;
+      //  top:889px;
+      //  margin-right:30%;
+      //
+      //}
+
       @include medias($max-widthh){
         display: flex;
         justify-content: center;
         align-content: center;
-        top:710px;
+        top:927px;
+        //margin-right:37%;
+        margin: auto;
+        left:0px;
+        right: 0px;
+
+      }@include medias($max-widthhh){
+         display: flex;
+         justify-content: center;
+         align-content: center;
+         top:526px;
+         margin: auto;
+         left:0px;
+         right: 0px;
 
 
+       }
+      @include mediaserch($max-widths){
+        top:724px;
       }
     }
   }
@@ -232,6 +285,7 @@ body{
     flex-direction:column;
 
 
+
   }
   .s2-div1{
     display: flex;
@@ -242,13 +296,15 @@ body{
     background-color: white;
     height:50vh;
     align-items: center;
-      @include medias($max-widthh){
-        dispaly:flex;
-        flex: 1;
-        flex-direction:column;
-        text-align: center;
-        justify-content: center;
-      }
+    @include medias($max-widthh){
+      dispaly:flex;
+      flex: 1;
+      flex-direction:column;
+      text-align: center;
+      justify-content: center;
+      padding-top:20px;
+
+    }
     .s2-matn{
 
       //margin-top:40px;
@@ -276,6 +332,7 @@ body{
     text-align: justify;
     direction:ltr;
     height:auto;
+
     @include medias($max-widthh){
       dispaly:flex;
       flex: 1;
@@ -297,6 +354,10 @@ body{
       //margin-top:40px;
       background-color: white;
       align-content: center;
+      @include medias($max-widthh){
+        width:100%;
+        margin-top:0px;
+      }
 
 
       .txt{
@@ -312,6 +373,7 @@ body{
         margin-left: 20px;
       }
     }
+
   }
 
   .button{
@@ -328,6 +390,11 @@ body{
     //display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
+    @include medias($media-width){
+      margin-right:210px;
+
+
+    }
     @include medias($max-widthh){
       dispaly:flex;
       flex: 1;
@@ -336,6 +403,11 @@ body{
       justify-content: center;
       width:220px;
       margin-left:0px;
+      //margin-left:162px;
+
+      margin: auto;
+      margin-top:5px;
+      text-align: center;
     }
 
   }
@@ -418,14 +490,14 @@ body{
       height:195px;
       margin-left: 20px;
       line-height: 25px;
-        @include medias($max-widthh){
-          dispaly:flex;
-          flex: 1;
-          flex-direction:column;
-          justify-content: center;
-          margin-left: 0px;
-          width: 100%;
-        }
+      @include medias($max-widthh){
+        dispaly:flex;
+        flex: 1;
+        flex-direction:column;
+        justify-content: center;
+        margin-left: 0px;
+        width: 100%;
+      }
 
       .txt{
         //margin-top:20px;
@@ -481,7 +553,7 @@ body{
         border-radius: 5px;
         cursor: pointer;
         @include medias($max-widthh){
-        margin-top: 25px;
+          margin-top: 25px;
         }
         &:hover {
           background-color: color(btn-bg);
@@ -546,6 +618,12 @@ body{
   height:50px;
   background-color: gray;
 }
-.team{
-  font-weight: bold;
+
+#toggle-menu{
+  @include mediasss($max-widthhh){
+    z-index:999;
+    top:0px;
+    position: fixed;
+  }
+
 }

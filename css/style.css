@@ -10,10 +10,13 @@ body {
   justify-content: flex-start;
   background-color: #D0D0D0;
   position: fixed;
-  z-index: 999;
+  z-index: 990;
   top: 0;
   width: 100%; }
-  @media only screen and (max-width: 1100px) {
+  @media only screen and (max-width: 411px) {
+    .nav-bar {
+      display: none; } }
+  @media only screen and (max-width: 835px) {
     .nav-bar {
       align-items: center;
       dispaly: flex;
@@ -43,7 +46,7 @@ body {
     margin-right: auto;
     padding-top: 5px;
     object-fit: contain; }
-    @media only screen and (max-width: 1100px) {
+    @media only screen and (max-width: 835px) {
       .nav-bar #logo {
         margin-right: 0px;
         align-self: center; } }
@@ -51,6 +54,9 @@ body {
 .setion1 .s1-div1 {
   width: 100%;
   height: 100vh; }
+  @media only screen and (max-width: 411px) {
+    .setion1 .s1-div1 {
+      margin-top: -289px; } }
   .setion1 .s1-div1 .serch1 {
     width: 100%;
     height: 40vh;
@@ -58,14 +64,17 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center; }
-    @media only screen and (max-width: 1100px) {
+    @media only screen and (max-width: 320px) {
+      .setion1 .s1-div1 .serch1 {
+        padding-top: 30px; } }
+    @media only screen and (max-width: 835px) {
       .setion1 .s1-div1 .serch1 {
         dispaly: flex;
         flex-direction: column;
         flex-wrap: wrap;
         text-align: center;
         margin-top: 300px; } }
-    @media only screen and (max-width: 1100px) {
+    @media only screen and (max-width: 835px) {
       .setion1 .s1-div1 .serch1 {
         font-size: 13px; } }
   .setion1 .s1-div1 .sech-company {
@@ -85,7 +94,7 @@ body {
       background-color: #8270d8; }
     .setion1 .s1-div1 .btn-try2:focus {
       outline: none; }
-    @media only screen and (max-width: 1100px) {
+    @media only screen and (max-width: 835px) {
       .setion1 .s1-div1 .btn-try2 {
         margin-top: 10px; } }
 .setion1 .banafsh {
@@ -105,7 +114,7 @@ body {
     direction: ltr;
     color: white;
     line-height: 25px; }
-    @media only screen and (max-width: 1100px) {
+    @media only screen and (max-width: 835px) {
       .setion1 .banafsh .matn2 {
         display: flex;
         flex: 1;
@@ -121,12 +130,27 @@ body {
     position: absolute;
     right: 50px;
     top: 560px; }
-    @media only screen and (max-width: 1100px) {
+    @media only screen and (max-width: 835px) {
       .setion1 .banafsh .chear {
         display: flex;
         justify-content: center;
         align-content: center;
-        top: 710px; } }
+        top: 927px;
+        margin: auto;
+        left: 0px;
+        right: 0px; } }
+    @media only screen and (max-width: 411px) {
+      .setion1 .banafsh .chear {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        top: 526px;
+        margin: auto;
+        left: 0px;
+        right: 0px; } }
+    @media only screen and (max-width: 320px) {
+      .setion1 .banafsh .chear {
+        top: 724px; } }
 .setion1 #img1 {
   width: 70%;
   position: absolute;
@@ -137,7 +161,7 @@ body {
 
 .setion2 {
   align-content: center; }
-  @media only screen and (max-width: 1100px) {
+  @media only screen and (max-width: 835px) {
     .setion2 {
       dispaly: flex;
       flex-direction: column; } }
@@ -150,13 +174,14 @@ body {
     background-color: white;
     height: 50vh;
     align-items: center; }
-    @media only screen and (max-width: 1100px) {
+    @media only screen and (max-width: 835px) {
       .setion2 .s2-div1 {
         dispaly: flex;
         flex: 1;
         flex-direction: column;
         text-align: center;
-        justify-content: center; } }
+        justify-content: center;
+        padding-top: 20px; } }
     .setion2 .s2-div1 .s2-matn {
       width: 260px;
       min-height: auto;
@@ -171,7 +196,7 @@ body {
     text-align: justify;
     direction: ltr;
     height: auto; }
-    @media only screen and (max-width: 1100px) {
+    @media only screen and (max-width: 835px) {
       .setion2 .s2-div2 {
         dispaly: flex;
         flex: 1;
@@ -189,6 +214,10 @@ body {
       height: 195px;
       background-color: white;
       align-content: center; }
+      @media only screen and (max-width: 835px) {
+        .setion2 .s2-div2 .s2-matn2 {
+          width: 100%;
+          margin-top: 0px; } }
       .setion2 .s2-div2 .s2-matn2 .txt {
         margin-top: 20px; }
     .setion2 .s2-div2 .s2-img2 img {
@@ -206,7 +235,10 @@ body {
     text-decoration: none;
     font-size: 16px;
     margin: 4px 2px; }
-    @media only screen and (max-width: 1100px) {
+    @media only screen and (max-width: 768px) {
+      .setion2 .button {
+        margin-right: 210px; } }
+    @media only screen and (max-width: 835px) {
       .setion2 .button {
         dispaly: flex;
         flex: 1;
@@ -214,7 +246,10 @@ body {
         align-items: center;
         justify-content: center;
         width: 220px;
-        margin-left: 0px; } }
+        margin-left: 0px;
+        margin: auto;
+        margin-top: 5px;
+        text-align: center; } }
   .setion2 .s2-div3 {
     display: flex;
     flex-direction: row;
@@ -225,7 +260,7 @@ body {
     background-color: white;
     height: 50vh;
     align-items: center; }
-    @media only screen and (max-width: 1100px) {
+    @media only screen and (max-width: 835px) {
       .setion2 .s2-div3 {
         dispaly: flex;
         flex: 1;
@@ -236,7 +271,7 @@ body {
       width: 260px;
       min-height: auto;
       line-height: 25px; }
-      @media only screen and (max-width: 1100px) {
+      @media only screen and (max-width: 835px) {
         .setion2 .s2-div3 .s2-matn {
           dispaly: flex;
           flex-direction: column; } }
@@ -256,7 +291,7 @@ body {
   height: 50vh;
   background-color: #9370d8;
   align-items: center; }
-  @media only screen and (max-width: 1100px) {
+  @media only screen and (max-width: 835px) {
     .setion3 .s3-div {
       dispaly: flex;
       flex: 1;
@@ -269,7 +304,7 @@ body {
     height: 195px;
     margin-left: 20px;
     line-height: 25px; }
-    @media only screen and (max-width: 1100px) {
+    @media only screen and (max-width: 835px) {
       .setion3 .s3-div .s2-matn2 {
         dispaly: flex;
         flex: 1;
@@ -289,7 +324,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center; }
-  @media only screen and (max-width: 1100px) {
+  @media only screen and (max-width: 835px) {
     .setion3 .s3-div2 {
       dispaly: flex;
       flex: 1;
@@ -312,7 +347,7 @@ body {
       color: #FFF;
       border-radius: 5px;
       cursor: pointer; }
-      @media only screen and (max-width: 1100px) {
+      @media only screen and (max-width: 835px) {
         .setion3 .s3-div2 .c .btn-try2 {
           margin-top: 25px; } }
       .setion3 .s3-div2 .c .btn-try2:hover {
@@ -329,7 +364,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: black; }
-  @media only screen and (max-width: 1100px) {
+  @media only screen and (max-width: 835px) {
     .footerr {
       height: 250vh; } }
   .footerr .footerr1 {
@@ -342,7 +377,7 @@ body {
     min-height: auto;
     direction: ltr;
     color: white; }
-    @media only screen and (max-width: 1100px) {
+    @media only screen and (max-width: 835px) {
       .footerr .footerr1 {
         align-items: center;
         dispaly: flex;
@@ -357,7 +392,10 @@ body {
   height: 50px;
   background-color: gray; }
 
-.team {
-  font-weight: bold; }
+@media only screen and (max-width: 411px) {
+  #toggle-menu {
+    z-index: 999;
+    top: 0px;
+    position: fixed; } }
 
 /*# sourceMappingURL=style.css.map */

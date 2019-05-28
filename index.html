@@ -9,10 +9,66 @@
     <link type="image/png" rel="icon" href="http://s8.picofile.com/file/8358636100/a.png">
     <link rel="stylesheet" href="css/normalize.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" >
+
+    <script>
+
+        var onSmallView = window.matchMedia("(max-width: 411px)").matches;
+        window.addEventListener("resize", () => {
+            const media = window.matchMedia("(max-width: 411px)");
+            var e = document.getElementById("nav");
+            var s = document.getElementById("serchh");
+
+            if (media.matches && !onSmallView) {
+                e.style.display = "flex";
+                s.style.marginTop='10px';
+                e.style.flexDirection='row-reverse';
+                myFunction();
+
+                onSmallView = true;
+                return;
+            }
+
+            if (!media.matches && onSmallView) {
+                e.style.display = "flex";
+                s.style.marginTop='10px';
+                e.style.flexDirection='row-reverse';
+                onSmallView = false;
+                return;
+            }
+        });
+
+        function myFunction() {
+
+            var e = document.getElementById("nav");
+            var s1 = document.getElementById("serchh");
+            var ch=document.getElementById("chearr");
+            if (e.style.display == 'flex') {
+                e.style.display = 'none';
+                e.style.alignItems='center';
+                s1.style.marginTop = '250px';
+                ch.style.marginTop='-10px';
+            }
+
+            else {
+
+                e.style.display = 'flex';
+                ch.style.marginTop="799px";
+                e.style.flex = '1';
+                e.style.flexDirection = 'column';
+                e.alignItems = 'center';
+                s1.style.marginTop = '600px';
+                e.style.alignItems = 'center';
+                ch.style.marginTop='312px';
+            }
+        }
+    </script>
+
+
+
 </head>
 <body>
 <div class="contain">
-    <nav class="nav-bar">
+    <nav class="nav-bar" id="nav">
         <button type="button" class="btn-try1">Try for free</button>
         <a>Login</a>
         <a>Learn More</a>
@@ -21,90 +77,88 @@
         <a>Pricing</a>
         <a>Product</a>
         <a>Tour</a>
-        <img id="logo" alt="logo" src="img/Mask%20Group%201.png">
-    </nav>
-
+        <img id="logo" alt="logo" src="img/Mask%20Group%201.png"></nav>
+    <img src="img/menu.jpg" id="toggle-menu" onclick="myFunction()">
     <!-----------------------------setion1--------------------------------------------->
     <section class="setion1">
         <div class="s1-div1">
-            <div class="serch1">
-                    <h1 class="s1-text">For the work that matters most</h1>
-            <form action="#">
-                <label hidden>name-company</label>
-                <input type="text" placeholder="name@company.com" class="sech-company"/>
-                <button type="button" class="btn-try2">Try for free</button>
-            </form></div>
+            <div class="serch1" id="serchh">
+                <h1 class="s1-text">For the work that matters most</h1>
+                <form action="#">
+                    <label hidden>name-company</label>
+                    <input type="text" placeholder="name@company.com" class="sech-company"/>
+                    <button type="button" class="btn-try2">Try for free</button>
+                </form></div>
             <img src="img/Group%205.png" alt="product-lanch" id="img1">
         </div>
         <div class="banafsh">
-        <div class="matn2">
-                          <p class="text1"><b>Get organized</b><br><br>Plan and sucture work in a way
-                                that's best for you.Set priorities and
-                          deadlines.share details and assign
-                          tasks.Ali in one place.</p>
-                            <p class="text2"><b>Get organized</b><br><br>Plan and sucture work in a way
-                                that's best for you.Set priorities and
-                                deadlines.share details and assign
-                                tasks.Ali in one place.</p>
-                            <p class="text3"><b>Get organized</b><br><br>Plan and sucture work in a way
-                                that's best for you.Set priorities and
-                                deadlines.share details and assign
-                                tasks.Ali in one place.</p>
-        </div>
-        <img src="img/Group%202.png" class="chear" alt="chear">
+            <div class="matn2">
+                <p class="text1"><b>Get organized</b><br><br>Plan and sucture work in a way
+                    that's best for you.Set priorities and
+                    deadlines.share details and assign
+                    tasks.Ali in one place.</p>
+                <p class="text2"><b>Get organized</b><br><br>Plan and sucture work in a way
+                    that's best for you.Set priorities and
+                    deadlines.share details and assign
+                    tasks.Ali in one place.</p>
+                <p class="text3"><b>Get organized</b><br><br>Plan and sucture work in a way
+                    that's best for you.Set priorities and
+                    deadlines.share details and assign
+                    tasks.Ali in one place.</p>
+            </div>
+            <img src="img/Group%202.png" class="chear" id="chearr" alt="chear">
 
-         </div>
+        </div>
     </section>
     <!-----------------------------------setion2--------------------------------------->
-        <section class="setion2">
-            <div class="s2-div1">
+    <section class="setion2">
+        <div class="s2-div1">
             <p class="s2-matn"><b>Watch Asana in action</b><br>See how your team can sucture
-            work to turn all your goals into workable plans.</p>
+                work to turn all your goals into workable plans.</p>
             <p class="s2-img"> <img src="img/Group%204.png" ></p>
-            </div>
+        </div>
 
-            <div class="s2-div2">
-                <p class="s2-img2"> <img src="img/NoPath%20-%20Copy%20(53).png" ></p>
-                <b class="bb">،،</b><p class="s2-matn2">we track every single pice of
-                creative and make sure they're finished in time usige Asana.<br>
-                <br><b class="txt">jaimie fallon</b><br>Head of Creative Service</p>
-                </div>
-            <div class="button">
+        <div class="s2-div2">
+            <p class="s2-img2"> <img src="img/NoPath%20-%20Copy%20(53).png" ></p>
+            <b class="bb">??</b><p class="s2-matn2">we track every single pice of
+            creative and make sure they're finished in time usige Asana.<br>
+            <br><b class="txt">jaimie fallon</b><br>Head of Creative Service</p>
+        </div>
+        <div class="button">
             <button class="button ">trf</button>
             <button class="button ">melia</button>
             <button class="button">stance</button>
             <button class="button">life style</button>
-                <button class="button">see more customer</button></div>
+            <button class="button">see more customer</button></div>
 
-            <div class="s2-div3">
-                <p class="s2-matn"><b>Introducing Portfolios</b><br>Monitor the status of all your projects in
+        <div class="s2-div3">
+            <p class="s2-matn"><b>Introducing Portfolios</b><br>Monitor the status of all your projects in
                 real time,so you can keep strategic initiatives on track and easily report on progress.
-                    <br> <a href="#">show me have</a>
-                </p>
-                <p class="s2-img"> <img src="img/Group%2010.png" ></p>
-            </div>
+                <br> <a href="#">show me have</a>
+            </p>
+            <p class="s2-img"> <img src="img/Group%2010.png" ></p>
+        </div>
 
-        </section>
+    </section>
     <!-----------------------------setion3--------------------------------------------->
-        <section class="setion3">
-            <div class="s3-div">
-                <p class="s2-img2"> <img src="img/Rectangle%2051.png" ></p>
-                <p class="s2-matn2">we track every single pice of
+    <section class="setion3">
+        <div class="s3-div">
+            <p class="s2-img2"> <img src="img/Rectangle%2051.png" ></p>
+            <p class="s2-matn2">we track every single pice of
                 creative and make sure they're finished in time usige Asana.<br>
                 <br><b class="txt">jaimie fallon</b><br>Head of Creative Service</p>
-            </div>
-            <div class="s3-div2">
-                <h1 class="matn">For the work that matters most</h1>
-                <p class="txt">see why millions of people across 195 countries use Asana</p>
-                <form action="#" class="c">
-                    <label hidden>name-company</label>
-                    <input type="text" placeholder="name@company.com" class="sech"/>
-                    <button type="button" class="btn-try2">Try for free</button>
-                </form>
-            </div>
-
-            <footer class="footerr">
-                <div class="footerr1">
+        </div>
+        <div class="s3-div2">
+            <h1 class="matn">For the work that matters most</h1>
+            <p class="txt">see why millions of people across 195 countries use Asana</p>
+            <form action="#" class="c">
+                <label hidden>name-company</label>
+                <input type="text" placeholder="name@company.com" class="sech"/>
+                <button type="button" class="btn-try2">Try for free</button>
+            </form>
+        </div>
+        <footer class="footerr">
+            <div class="footerr1">
                 <div ><img src="img/Untitled.png" ></div>
                 <div><P>Asana</P>
                     <p><a href="#">Home</a></p>
@@ -150,15 +204,14 @@
                     <p> <a href="#">AsaNA community</a></p>
                     <p><a href="#">Developers & API</a></p>
                 </div>
-                </div>
+            </div>
 
-            </footer>
-            <p class="team">engish footer </p>
+        </footer>
+        <p class="team">engish </p>
 
 
 
-        </section>
+    </section>
 
 </div>
 </body>
-</html>
