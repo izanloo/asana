@@ -5,28 +5,16 @@ $colors:(
         colorr:#FFF,
         btn-bg:#8270d8
 );
-$max-widthh:835px;
-$media-width:768px;
-$max-widthhh:411px;
-$max-widths:320px;
+$small:576px;
+$medium:768px;
+$max-widths:992px;
+$phone:411px;
+$desktop:835px;
+$iphon:320px;
+
 //---------<@mixin>-------------
 @mixin medias($max-widthh) {
   @media only screen and (max-width:#{$max-widthh}) {
-    @content;
-  }
-}
-@mixin mediass($max-width) {
-  @media only screen and (max-width:#{$max-width}) {
-    @content;
-  }
-}
-@mixin mediasss($max-widthhh) {
-  @media only screen and (max-width:#{$max-widthhh}) {
-    @content;
-  }
-}
-@mixin mediaserch($max-widths) {
-  @media only screen and (max-width:#{$max-widths}) {
     @content;
   }
 }
@@ -50,11 +38,15 @@ body{
 
 
 }
+
 .nav-bar {
-  @include  mediasss($max-widthhh){
+  @include  medias($medium){
     display: none;
   }
-  display: flex;
+  @include  medias($desktop){
+    display: none;
+  }
+  display: flex ;
   flex-direction: row-reverse;
   justify-content: flex-start;
   background-color: color(bg);
@@ -62,12 +54,14 @@ body{
   z-index: 990;
   top: 0;
   width: 100%;
-  @include medias($max-widthh){
+  @include medias($desktop){
     align-items: center;
     dispaly:flex;
     flex-direction:column;
 
   }
+
+
 
   &:hover{
     box-shadow: 2px 2px 2px 2px gray;
@@ -106,7 +100,7 @@ body{
     margin-right:auto;
     padding-top: 5px;
     object-fit:contain;
-    @include medias($max-widthh){
+    @include medias($desktop){
       margin-right: 0px;
       align-self: center;
 
@@ -122,13 +116,33 @@ body{
     height:100vh;
 
 
-    @include mediasss($max-widthhh){
-      margin-top:-289px;
+    @include medias($medium){
+      margin-top:-277px;
     }
 
+
     .serch1{
-      @include mediaserch($max-widths){
+
+      @include medias($phone){
+        text-align: center;
+      }
+
+      @include medias($max-widths){
         padding-top:30px;
+      }
+      @include medias($medium){
+        margin-top:200px;
+      }
+      h1{
+        @include medias($phone){
+        font-size:1.5em;
+          margin-top:87px;
+        }
+        @include medias($iphon){
+        font-size:1.3em;
+          margin-top:87px;
+        }
+
       }
       width:100%;
       height:40vh;
@@ -136,19 +150,6 @@ body{
       justify-content: center;
       flex-direction: column;
       align-items: center;
-
-
-      @include medias($max-widthh){
-        dispaly:flex;
-        flex-direction:column;
-        flex-wrap: wrap;
-        text-align: center;
-        margin-top:300px;
-      }
-
-      @include medias($max-widthh){
-        font-size:13px;
-      }
 
     }
 
@@ -176,8 +177,8 @@ body{
       &:focus {
         outline: none;
       }
-      @include medias($max-widthh){
-        margin-top: 10px;
+      @include medias($phone){
+        margin-top:10px;
 
       }
     }
@@ -194,6 +195,11 @@ body{
     display: flex;
     justify-content:center;
     .matn2 {
+      @include medias($small){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
       width: 600px;
       //margin-top:0px;
       display: flex;
@@ -205,15 +211,6 @@ body{
       direction:ltr;
       color: white;
       line-height: 25px;
-      @include medias($max-widthh){
-        display: flex;
-        flex: 1;
-        flex-wrap: wrap;
-        justify-content: center;
-        flex-direction: column;
-        align-content:center;
-
-      }
 
       .text1,.text2,.text3{
         margin-top:120px;
@@ -225,42 +222,34 @@ body{
 
     .chear{
       position: absolute;
-      position: absolute;
       right:50px;
-      top:560px;
-      //@include medias($media-width){
-      //  display: flex;
-      //  justify-content: center;
-      //  align-content: center;
-      //  top:889px;
-      //  margin-right:30%;
-      //
-      //}
+      top:723px;
+      @include medias($desktop){
+        left: 0px;
+        right:0px;
+        margin:auto;
+        margin-top:-123px;
+      }
 
-      @include medias($max-widthh){
+      @include medias($medium){
         display: flex;
         justify-content: center;
         align-content: center;
-        top:927px;
-        //margin-right:37%;
+        top:540px;
         margin: auto;
         left:0px;
         right: 0px;
 
-      }@include medias($max-widthhh){
-         display: flex;
-         justify-content: center;
-         align-content: center;
-         top:526px;
-         margin: auto;
-         left:0px;
-         right: 0px;
 
-
-       }
-      @include mediaserch($max-widths){
-        top:724px;
       }
+      @include medias($iphon){
+        top:363px;
+        margin: auto;
+        left:0px;
+        right: 0px;
+
+      }
+
     }
   }
   #img1 {
@@ -279,15 +268,15 @@ body{
 .setion2{
 
   align-content: center;
-  @include medias($max-widthh){
 
-    dispaly:flex;
-    flex-direction:column;
-
-
-
-  }
   .s2-div1{
+    @include medias($small){
+      display: flex;
+      flex-direction: column;
+    }
+    @include medias($iphon){
+      height: auto;
+    }
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -296,18 +285,9 @@ body{
     background-color: white;
     height:50vh;
     align-items: center;
-    @include medias($max-widthh){
-      dispaly:flex;
-      flex: 1;
-      flex-direction:column;
-      text-align: center;
-      justify-content: center;
-      padding-top:20px;
 
-    }
     .s2-matn{
 
-      //margin-top:40px;
       width:260px;
       min-height: auto;
       line-height:25px;
@@ -315,9 +295,6 @@ body{
 
     }
     .s2-img{
-      //margin-top:40px;
-
-      //object-fit:contain;
       img{
         width:300px;
         margin-left: 20px;
@@ -326,6 +303,13 @@ body{
   }
 
   .s2-div2{
+    @include medias($small){
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+    }
+
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -333,31 +317,35 @@ body{
     direction:ltr;
     height:auto;
 
-    @include medias($max-widthh){
-      dispaly:flex;
-      flex: 1;
-      flex-direction:column;
-      text-align: center;
-      justify-content: center;
-    }
     .bb{
       font-size:100px;
       color: red;
       background-color: white;
       margin-top:16px;
       height:195px;
+      @include medias($small){
+        height:auto;
+        margin-top:-19px;
+        width:300px;
+        text-align:center;
+        margin-top: 5px;
+      }
 
     }
+
     .s2-matn2{
+      @include medias($small){
+      margin: auto;
+      text-align: center;
+      width:300px;
+        padding: 0px;
+
+      }
       width:260px;
-      height:195px;
-      //margin-top:40px;
+      height:185px;
+      padding:5px;
       background-color: white;
       align-content: center;
-      @include medias($max-widthh){
-        width:100%;
-        margin-top:0px;
-      }
 
 
       .txt{
@@ -367,17 +355,34 @@ body{
     }
     .s2-img2{
 
-      //object-fit:contain;
       img{
         width:300px;
-        margin-left: 20px;
+        //margin-left: 20px;
+        @include medias($iphon){
+        margin-left:0px;
+        }
+        @include medias($iphon){
+        margin-left:0px;
+        }
       }
     }
 
   }
 
   .button{
-    //width:520px;
+    @include medias($small){
+        dispaly:flex;
+        flex: 1;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+        width:220px;
+        margin-left:0px;
+
+        margin: auto;
+        margin-top:5px;
+        text-align: center;
+    }
     display: flex;
     flex-direction: row;
     justify-content:center;
@@ -390,25 +395,7 @@ body{
     //display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
-    @include medias($media-width){
-      margin-right:210px;
 
-
-    }
-    @include medias($max-widthh){
-      dispaly:flex;
-      flex: 1;
-      flex-direction:column;
-      align-items: center;
-      justify-content: center;
-      width:220px;
-      margin-left:0px;
-      //margin-left:162px;
-
-      margin: auto;
-      margin-top:5px;
-      text-align: center;
-    }
 
   }
   .s2-div3{
@@ -421,25 +408,28 @@ body{
     background-color: white;
     height:50vh;
     align-items: center;
-    @include medias($max-widthh){
+    @include medias($iphon){
+      height: auto;
+    }
+    @include medias($small){
       dispaly:flex;
       flex: 1;
       flex-direction:column;
       justify-content: center;
-      padding-top: 50px;
+      padding-top:17px;
+    }
+    @include medias($desktop){
+      dispaly:flex;
+      flex: 1;
+      flex-direction:column;
+      justify-content: center;
+      padding-top:17px;
     }
     .s2-matn{
-      //margin-top:40px;
       width:260px;
       min-height: auto;
       line-height:25px;
-      @include medias($max-widthh){
 
-        dispaly:flex;
-        flex-direction:column;
-
-
-      }
 
       a{
         text-decoration: none;
@@ -447,9 +437,6 @@ body{
 
     }
     .s2-img{
-      //margin-top:40px;
-
-      //object-fit:contain;
       img{
         width:300px;
         margin-left: 20px;
@@ -464,6 +451,7 @@ body{
 //-----------<setion3>------------
 
 .setion3{
+
   .s3-div{
     display: flex;
     flex-direction: row;
@@ -471,16 +459,17 @@ body{
     align-content: center;
     text-align: justify;
     direction:ltr;
-    height:50vh;
+    height:60vh;
     background-color: #9370d8;
     align-items: center;
-    @include medias($max-widthh){
+
+    @include medias($desktop){
       dispaly:flex;
       flex: 1;
       flex-direction:column;
       text-align: center;
       justify-content: center;
-      height: 60vh;
+      height:auto;
 
     }
 
@@ -490,26 +479,29 @@ body{
       height:195px;
       margin-left: 20px;
       line-height: 25px;
-      @include medias($max-widthh){
+
+      @include medias($medium){
         dispaly:flex;
         flex: 1;
         flex-direction:column;
         justify-content: center;
         margin-left: 0px;
-        width: 100%;
+        text-align: justify;
       }
 
+
       .txt{
-        //margin-top:20px;
 
       }
     }
     .s2-img2{
 
-      //object-fit:contain;
       img{
         width:300px;
         margin-left: 20px;
+        @include medias($iphon){
+          margin-left:0px;
+        }
       }
     }
   }
@@ -524,7 +516,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    @include medias($max-widthh){
+    @include medias($desktop){
       dispaly:flex;
       flex: 1;
       flex-direction:column;
@@ -552,9 +544,7 @@ body{
         color: color(colorr);
         border-radius: 5px;
         cursor: pointer;
-        @include medias($max-widthh){
-          margin-top: 25px;
-        }
+
         &:hover {
           background-color: color(btn-bg);
         }
@@ -562,7 +552,9 @@ body{
         &:focus {
           outline: none;
         }
-
+      @include medias($medium){
+        margin-top: 20px;
+      }
       }
 
     }
@@ -573,19 +565,23 @@ body{
   }}
 
 .footerr {
+
   width: 100%;
   height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: black;
-  @include medias($max-widthh){
-    height: 250vh;
+  @include medias($medium) {
+    height:auto;
 
   }
 
-
   .footerr1 {
+    @include medias($phone){
+      text-align: center;
+
+    }
     width: 80%;
     color: #D0D0D0;
     display: flex;
@@ -596,20 +592,24 @@ body{
     direction: ltr;
     color: white;
 
-    @include medias($max-widthh){
-      align-items: center;
-      dispaly:flex;
-      flex-direction:column;
-
+    @include medias($medium) {
+      dispaly: flex;
+      flex-direction: column;
+      text-align: center;
 
     }
+
 
     a {
       text-decoration: none;
       display: block;
       color: gray;
 
-
+    }
+    .log1 {
+      @include medias($medium) {
+        align-items: center;
+      }
     }
   }
 }
@@ -619,11 +619,45 @@ body{
   background-color: gray;
 }
 
-#toggle-menu{
-  @include mediasss($max-widthhh){
+.toggle-menu{
+  @include medias($medium){
+    display:flex;
+    flex-direction: column;
+    z-index:999;
+    top:0px;
+    position: fixed;
+  }@include medias($desktop){
+    display:flex;
+    flex-direction: column;
     z-index:999;
     top:0px;
     position: fixed;
   }
 
 }
+
+.serch2{
+  @include medias($medium){
+    padding-top:311px;
+  }
+  @include medias($desktop){
+    padding-top:311px;
+  }
+
+}
+
+.chear1{
+  @include medias($medium){
+    padding-top:310px;
+  }
+  @include medias($desktop){
+    padding-top:315px;
+    left: 0px;
+    right:0px;
+    margin:auto;
+  }
+}
+
+
+
+

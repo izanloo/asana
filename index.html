@@ -9,59 +9,7 @@
     <link type="image/png" rel="icon" href="http://s8.picofile.com/file/8358636100/a.png">
     <link rel="stylesheet" href="css/normalize.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" >
-
-    <script>
-
-        var onSmallView = window.matchMedia("(max-width: 411px)").matches;
-        window.addEventListener("resize", () => {
-            const media = window.matchMedia("(max-width: 411px)");
-            var e = document.getElementById("nav");
-            var s = document.getElementById("serchh");
-
-            if (media.matches && !onSmallView) {
-                e.style.display = "flex";
-                s.style.marginTop='10px';
-                e.style.flexDirection='row-reverse';
-                myFunction();
-
-                onSmallView = true;
-                return;
-            }
-
-            if (!media.matches && onSmallView) {
-                e.style.display = "flex";
-                s.style.marginTop='10px';
-                e.style.flexDirection='row-reverse';
-                onSmallView = false;
-                return;
-            }
-        });
-
-        function myFunction() {
-
-            var e = document.getElementById("nav");
-            var s1 = document.getElementById("serchh");
-            var ch=document.getElementById("chearr");
-            if (e.style.display == 'flex') {
-                e.style.display = 'none';
-                e.style.alignItems='center';
-                s1.style.marginTop = '250px';
-                ch.style.marginTop='-10px';
-            }
-
-            else {
-
-                e.style.display = 'flex';
-                ch.style.marginTop="799px";
-                e.style.flex = '1';
-                e.style.flexDirection = 'column';
-                e.alignItems = 'center';
-                s1.style.marginTop = '600px';
-                e.style.alignItems = 'center';
-                ch.style.marginTop='312px';
-            }
-        }
-    </script>
+    <script src="js/script.js"></script>
 
 
 
@@ -78,11 +26,11 @@
         <a>Product</a>
         <a>Tour</a>
         <img id="logo" alt="logo" src="img/Mask%20Group%201.png"></nav>
-    <img src="img/menu.jpg" id="toggle-menu" onclick="myFunction()">
+    <img src="img/menu.jpg" class="toggle-menu" onclick="myFunction()">
     <!-----------------------------setion1--------------------------------------------->
-    <section class="setion1">
-        <div class="s1-div1">
-            <div class="serch1" id="serchh">
+    <section class="setion1"id="serchh">
+        <div class="s1-div1"  >
+            <div class="serch1"  >
                 <h1 class="s1-text">For the work that matters most</h1>
                 <form action="#">
                     <label hidden>name-company</label>
@@ -120,7 +68,7 @@
 
         <div class="s2-div2">
             <p class="s2-img2"> <img src="img/NoPath%20-%20Copy%20(53).png" ></p>
-            <b class="bb">??</b><p class="s2-matn2">we track every single pice of
+            <b class="bb">،،</b><p class="s2-matn2">we track every single pice of
             creative and make sure they're finished in time usige Asana.<br>
             <br><b class="txt">jaimie fallon</b><br>Head of Creative Service</p>
         </div>
